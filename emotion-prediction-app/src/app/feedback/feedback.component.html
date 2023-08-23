@@ -1,0 +1,20 @@
+<div class="feedback">
+  <h3>Provide Feedback</h3>
+  <mat-radio-group [(ngModel)]="feedbackType">
+    <mat-radio-button value="thumbs-up">Accurate</mat-radio-button>
+    <mat-radio-button value="thumbs-down">Not Accurate</mat-radio-button>
+  </mat-radio-group>
+  <div *ngIf="feedbackType === 'thumbs-down'">
+    <mat-form-field>
+      <mat-label>Select the Most Appropriate Emotion:</mat-label>
+      <mat-select [(ngModel)]="selectedEmotion">
+        <mat-option *ngFor="let emotion of emotionOptions" [value]="emotion">{{ emotion }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="submitFeedback()">Submit Feedback</button>
+</div>
+
+<div class="message" *ngIf="submittedFeedback">
+  <p>Thank you for your feedback we will adjust the label <strong>{{ selectedEmotion }}</strong> for the input data you provided!</p>
+</div>

@@ -1,0 +1,22 @@
+<mat-card *ngIf="predictedEmotion" class="emotion-card">
+  <mat-card-header>
+    <mat-card-title>{{ capitalizeFirstLetter(predictedEmotion) }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container [ngSwitch]="predictedEmotion">
+      <div *ngSwitchCase="'sadness'">
+        <p>Here's a joke to cheer you up:</p>
+        <p>{{ randomJoke }}</p>
+      </div>
+      <div *ngSwitchCase="'joy'">
+        <p>Good for you! Enjoy your joyful moments!</p>
+      </div>
+      <div *ngSwitchCase="'fear'">
+        <p>Remember: "{{ randomMotivationQuote }}"</p>
+      </div>
+      <div *ngSwitchCase="'love'">
+        <p>❤️</p>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

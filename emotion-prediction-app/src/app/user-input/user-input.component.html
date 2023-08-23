@@ -1,0 +1,9 @@
+<div class="user-input">
+  <p>How are you <strong>feeling</strong> today?</p>
+  <div>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="textInput" id="inputText"></textarea>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="predictEmotion()">Predict Emotion</button>
+</div>
