@@ -1,0 +1,8 @@
+<mat-card *ngIf="predictedEmotion" class="emotion-card">
+  <mat-card-header>
+    <mat-card-title>Predicted Emotion</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <h2>{{ capitalizeFirstLetter(predictedEmotion) }}</h2>
+  </mat-card-content>
+</mat-card>
